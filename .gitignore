@@ -1,0 +1,10 @@
+.DS_Store
+._*
+*.log
+node_modules/
+.env
+.env.local
+*.zip
+
+# Internal docs — not for public repo
+CLAUDE.md

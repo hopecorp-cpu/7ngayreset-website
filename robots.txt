@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://7ngayreset.com/sitemap.xml
