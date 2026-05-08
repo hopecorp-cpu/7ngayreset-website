@@ -59,6 +59,19 @@
   const form = document.querySelector('.signup-form');
   if (form) {
     form.addEventListener('submit', function (e) {
+      // If form posts to a real endpoint (FormSubmit/Formspree), let browser submit natively
+      const action = form.getAttribute('action') || '';
+      if (action.indexOf('formsubmit.co') !== -1 || action.indexOf('formspree.io') !== -1) {
+        // Validate consent and required fields, but allow native submit
+        const consent = form.querySelector('[name="consent"]');
+        if (consent && !consent.checked) {
+          e.preventDefault();
+          consent.focus();
+          alert('Vui lòng tích đồng ý xử lý dữ liệu cá nhân theo Nghị định 13/2023.');
+          return;
+        }
+        return;
+      }
       e.preventDefault();
       const name = form.querySelector('[name="name"]');
       const email = form.querySelector('[name="email"]');
