@@ -25,6 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/jpeg" href="iki-logo-256.jpg" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="chan-sdt-ao.js" defer></script>
   <script src="script.js" defer></script>
 
   <script type="application/ld+json">
@@ -533,7 +534,7 @@
     <div class="container">
       <div class="signup-form-wrap">
         <h3>Đăng ký Khoá 3 Ngày Reset</h3>
-        <form class="signup-form" action="https://formsubmit.co/contact@ikihealing.com" method="POST" novalidate>
+        <form class="signup-form" action="https://formsubmit.co/contact@ikihealing.com" method="POST">
           <input type="hidden" name="_subject" value="[3 Ngày Reset] Đăng ký mới từ web" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
@@ -549,7 +550,11 @@
           </div>
           <div class="form-row">
             <label for="signup-phone">Số điện thoại *</label>
-            <input id="signup-phone" type="tel" name="phone" placeholder="09xxxxxxxx" required />
+            <input id="signup-phone" type="tel" name="phone" placeholder="09xxxxxxxx"
+                   inputmode="numeric" autocomplete="tel"
+                   pattern="0[35789][0-9]{8}"
+                   title="Số điện thoại phải đủ 10 số và bắt đầu bằng số 0 (ví dụ 0987654321)"
+                   required />
           </div>
 
           <label style="margin-top: 8px;">Loại vé bạn quan tâm *</label>
